@@ -129,4 +129,80 @@ footer {
     input, button {
         font-size: 16px;
     }
+}
+
+.style-selection {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.style-selection h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.style-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.style-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.style-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.style-content {
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--card-background);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.style-card input[type="radio"]:checked + .style-content {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 122, 255, 0.2);
+}
+
+.style-content h4 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.style-content p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.name-card {
+    padding: 30px;
+}
+
+.name-card h3 {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.name-meaning {
+    font-size: 16px;
+    color: #666;
+    margin-top: 12px;
+}
+
+.name-pronunciation {
+    font-size: 14px;
+    color: #888;
+    margin-top: 8px;
+    font-style: italic;
 } 

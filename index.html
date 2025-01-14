@@ -1,36 +1,84 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>拥有你的中文名 | Chinese Name Generator</title>
+    <title>Get Your Chinese Name | Name Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>拥有你的中文名</h1>
-            <p class="subtitle">获得独特的中文名字</p>
+            <h1>Get Your Chinese Name</h1>
+            <p class="subtitle">Discover your unique Chinese identity</p>
         </header>
 
         <main>
             <div class="input-section">
                 <input type="text" 
                        id="originalName" 
-                       placeholder="请输入你的名字"
+                       placeholder="Enter your name"
                        autocomplete="off">
-                <button id="generateBtn">生成中文名</button>
+                
+                <div class="gender-selection">
+                    <h3>Choose your gender:</h3>
+                    <div class="gender-options">
+                        <label class="gender-card">
+                            <input type="radio" name="gender" value="male" checked>
+                            <div class="gender-content">
+                                <h4>Male</h4>
+                                <p>男 (nán)</p>
+                            </div>
+                        </label>
+                        <label class="gender-card">
+                            <input type="radio" name="gender" value="female">
+                            <div class="gender-content">
+                                <h4>Female</h4>
+                                <p>女 (nǚ)</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="style-selection">
+                    <h3>Choose your name style:</h3>
+                    <div class="style-options">
+                        <label class="style-card">
+                            <input type="radio" name="nameStyle" value="traditional" checked>
+                            <div class="style-content">
+                                <h4>Traditional</h4>
+                                <p>Classical Chinese names with deep cultural meaning</p>
+                            </div>
+                        </label>
+                        <label class="style-card">
+                            <input type="radio" name="nameStyle" value="modern">
+                            <div class="style-content">
+                                <h4>Modern</h4>
+                                <p>Contemporary names popular in modern China</p>
+                            </div>
+                        </label>
+                        <label class="style-card">
+                            <input type="radio" name="nameStyle" value="artistic">
+                            <div class="style-content">
+                                <h4>Artistic</h4>
+                                <p>Poetic names inspired by nature and arts</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="generateBtn">Generate Names</button>
             </div>
 
             <div class="results-section">
                 <div class="results-container">
-                    <!-- 结果将通过 JavaScript 动态生成 -->
+                    <!-- Results will be generated here -->
                 </div>
             </div>
         </main>
 
         <footer>
-            <p>用❤️创造</p>
+            <p>Made with ❤️ | Explore Chinese Culture</p>
         </footer>
     </div>
     <script src="script.js"></script>
