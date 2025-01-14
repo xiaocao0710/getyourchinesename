@@ -3,149 +3,148 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generateBtn');
     const resultsContainer = document.querySelector('.results-container');
 
-    // Name data for different styles
     const nameData = {
         traditional: {
             surnames: [
-                '李 (Lǐ)', '王 (Wáng)', '张 (Zhāng)', '刘 (Liú)', '陈 (Chén)', 
-                '杨 (Yáng)', '黄 (Huáng)', '赵 (Zhào)', '吴 (Wú)', '周 (Zhōu)',
-                '徐 (Xú)', '孙 (Sūn)', '马 (Mǎ)', '朱 (Zhū)', '胡 (Hú)',
-                '郭 (Guō)', '何 (Hé)', '高 (Gāo)', '林 (Lín)', '罗 (Luó)',
-                '梁 (Liáng)', '谢 (Xiè)', '宋 (Sòng)', '唐 (Táng)', '许 (Xǔ)',
-                '韩 (Hán)', '冯 (Féng)', '邓 (Dèng)', '曹 (Cáo)', '彭 (Péng)',
-                '曾 (Zēng)', '萧 (Xiāo)', '田 (Tián)', '董 (Dǒng)', '袁 (Yuán)',
-                '潘 (Pān)', '于 (Yú)', '蒋 (Jiǎng)', '蔡 (Cài)', '魏 (Wèi)'
+                '李 (Li)', '王 (Wang)', '张 (Zhang)', '刘 (Liu)', '陈 (Chen)', 
+                '杨 (Yang)', '黄 (Huang)', '赵 (Zhao)', '吴 (Wu)', '周 (Zhou)',
+                '徐 (Xu)', '孙 (Sun)', '马 (Ma)', '朱 (Zhu)', '胡 (Hu)',
+                '郭 (Guo)', '何 (He)', '高 (Gao)', '林 (Lin)', '罗 (Luo)',
+                '梁 (Liang)', '谢 (Xie)', '宋 (Song)', '唐 (Tang)', '许 (Xu)',
+                '韩 (Han)', '冯 (Feng)', '邓 (Deng)', '曹 (Cao)', '彭 (Peng)',
+                '曾 (Zeng)', '萧 (Xiao)', '田 (Tian)', '董 (Dong)', '袁 (Yuan)',
+                '潘 (Pan)', '于 (Yu)', '蒋 (Jiang)', '蔡 (Cai)', '魏 (Wei)'
             ],
             characters: {
                 male: [
-                    // 金属性
-                    '铭 (míng)', '钧 (jūn)', '鉴 (jiàn)', '钊 (zhāo)', '铿 (kēng)',
-                    // 木属性
-                    '楠 (nán)', '桐 (tóng)', '材 (cái)', '栋 (dòng)', '森 (sēn)',
-                    // 水属性
-                    '泽 (zé)', '润 (rùn)', '洪 (hóng)', '渊 (yuān)', '济 (jì)',
-                    // 火属性
-                    '炳 (bǐng)', '煜 (yù)', '炯 (jiǒng)', '焕 (huàn)', '熙 (xī)',
-                    // 土属性
-                    '厚 (hòu)', '垣 (yuán)', '固 (gù)', '坤 (kūn)', '壤 (rǎng)',
-                    // 传统美德
-                    '德 (dé)', '仁 (rén)', '义 (yì)', '礼 (lǐ)', '智 (zhì)', 
-                    '信 (xìn)', '忠 (zhōng)', '孝 (xiào)', '廉 (lián)', '节 (jié)',
-                    // 文化典故
-                    '子 (zǐ)', '文 (wén)', '博 (bó)', '学 (xué)', '诚 (chéng)',
-                    '敬 (jìng)', '明 (míng)', '修 (xiū)', '齐 (qí)', '正 (zhèng)'
+                    // Metal Element
+                    '铭 (Ming) - Metal Element: Inscription, represents strength and determination', 
+                    '钧 (Jun) - Metal Element: Excellence, symbolizes precision and nobility', 
+                    '鉴 (Jian) - Metal Element: Mirror, reflects wisdom and clarity', 
+                    '钊 (Zhao) - Metal Element: Bright, signifies brilliance and sharpness', 
+                    '铿 (Keng) - Metal Element: Resonant, embodies strength and resilience',
+                    // Wood Element
+                    '楠 (Nan) - Wood Element: Cedar, represents growth and vitality', 
+                    '桐 (Tong) - Wood Element: Paulownia, symbolizes nobility and grace', 
+                    '材 (Cai) - Wood Element: Talent, signifies potential and development', 
+                    '栋 (Dong) - Wood Element: Pillar, embodies support and reliability', 
+                    '森 (Sen) - Wood Element: Forest, represents abundance and harmony',
+                    // Water Element
+                    '泽 (Ze) - Water Element: Beneficence, represents nurturing and wisdom', 
+                    '润 (Run) - Water Element: Nourish, symbolizes gentleness and growth', 
+                    '洪 (Hong) - Water Element: Vast, signifies power and abundance', 
+                    '渊 (Yuan) - Water Element: Deep, embodies profound wisdom', 
+                    '济 (Ji) - Water Element: Aid, represents helping and flowing',
+                    // Fire Element
+                    '炳 (Bing) - Fire Element: Bright, represents illumination and intelligence', 
+                    '煜 (Yu) - Fire Element: Brilliant, symbolizes radiance and warmth', 
+                    '炯 (Jiong) - Fire Element: Bright, signifies clarity and insight', 
+                    '焕 (Huan) - Fire Element: Brilliant, embodies transformation', 
+                    '熙 (Xi) - Fire Element: Prosperous, represents warmth and joy',
+                    // Earth Element
+                    '厚 (Hou) - Earth Element: Generous, represents stability and kindness', 
+                    '垣 (Yuan) - Earth Element: Wall, symbolizes protection and foundation', 
+                    '固 (Gu) - Earth Element: Solid, signifies reliability and steadfastness', 
+                    '坤 (Kun) - Earth Element: Earth, embodies receptivity and nurturing', 
+                    '壤 (Rang) - Earth Element: Soil, represents fertility and growth',
+                    // Traditional Virtues
+                    '德 (De) - Virtue, represents moral excellence', 
+                    '仁 (Ren) - Benevolence, symbolizes kindness and humanity', 
+                    '义 (Yi) - Righteousness, signifies justice and moral uprightness', 
+                    '礼 (Li) - Courtesy, embodies proper conduct and respect', 
+                    '智 (Zhi) - Wisdom, represents intelligence and understanding'
                 ],
                 female: [
-                    // 金属性
-                    '瑶 (yáo)', '琳 (lín)', '璎 (yīng)', '玲 (líng)', '珊 (shān)',
-                    // 木属性
-                    '芸 (yún)', '萱 (xuān)', '荷 (hé)', '菡 (hàn)', '蕊 (ruǐ)',
-                    // 水属性
-                    '滢 (yíng)', '澜 (lán)', '涵 (hán)', '润 (rùn)', '清 (qīng)',
-                    // 火属性
-                    '炫 (xuàn)', '煜 (yù)', '熹 (xī)', '焱 (yàn)', '琰 (yǎn)',
-                    // 土属性
-                    '茵 (yīn)', '岚 (lán)', '璞 (pú)', '琪 (qí)', '瑗 (yuàn)',
-                    // 传统美德
-                    '淑 (shū)', '贤 (xián)', '惠 (huì)', '雅 (yǎ)', '静 (jìng)',
-                    '敏 (mǐn)', '慧 (huì)', '巧 (qiǎo)', '婉 (wǎn)', '娴 (xián)',
-                    // 文化典故
-                    '诗 (shī)', '雨 (yǔ)', '梦 (mèng)', '书 (shū)', '韵 (yùn)',
-                    '音 (yīn)', '画 (huà)', '琴 (qín)', '棋 (qí)', '颖 (yǐng)'
+                    // Metal Element
+                    '瑶 (Yao) - Metal Element: Precious Jade, represents beauty and purity', 
+                    '琳 (Lin) - Metal Element: Fine Jade, symbolizes elegance and refinement', 
+                    '璎 (Ying) - Metal Element: Necklace, signifies adornment and grace', 
+                    '玲 (Ling) - Metal Element: Tinkling Jade, embodies delicacy and clarity', 
+                    '珊 (Shan) - Metal Element: Coral, represents beauty and resilience',
+                    // Wood Element
+                    '芸 (Yun) - Wood Element: Elegant, represents refinement and growth', 
+                    '萱 (Xuan) - Wood Element: Daylily, symbolizes maternal love', 
+                    '荷 (He) - Wood Element: Lotus, signifies purity and nobility', 
+                    '菡 (Han) - Wood Element: Water Lily, embodies grace and beauty', 
+                    '蕊 (Rui) - Wood Element: Flower Center, represents essence and beauty',
+                    // Water Element
+                    '滢 (Ying) - Water Element: Clear, represents purity and wisdom', 
+                    '澜 (Lan) - Water Element: Wave, symbolizes grace and movement', 
+                    '涵 (Han) - Water Element: Contain, signifies depth and inclusiveness', 
+                    '润 (Run) - Water Element: Gentle, embodies nurturing and kindness', 
+                    '清 (Qing) - Water Element: Pure, represents clarity and freshness',
+                    // Fire Element
+                    '炫 (Xuan) - Fire Element: Brilliant, represents dazzling beauty', 
+                    '煜 (Yu) - Fire Element: Bright, symbolizes radiance and warmth', 
+                    '熹 (Xi) - Fire Element: Warm, signifies gentle warmth and joy', 
+                    '焱 (Yan) - Fire Element: Flame, embodies passion and energy', 
+                    '琰 (Yan) - Fire Element: Bright, represents brilliance and beauty',
+                    // Earth Element
+                    '茵 (Yin) - Earth Element: Soft, represents comfort and gentleness', 
+                    '岚 (Lan) - Earth Element: Mist, symbolizes ethereal beauty', 
+                    '璞 (Pu) - Earth Element: Uncut Jade, signifies natural beauty', 
+                    '琪 (Qi) - Earth Element: Fine Jade, embodies pure beauty', 
+                    '瑗 (Yuan) - Earth Element: Jade Ornament, represents refined beauty'
                 ]
-            },
-            meanings: {
-                // 金属性字解释
-                '铭': '出自《尚书》"铭记在心"，五行属金，象征坚毅果断的品格',
-                '钧': '取自《周易》"钧天广乐"，五行属金，寓意崇高的理想',
-                '瑶': '源自《诗经》"瑶琴鸣球"，五行属金，象征美好纯净',
-                '琳': '出自《诗经》"琳琅满目"，五行属金，形容才德兼备',
-                
-                // 木属性字解释
-                '楠': '取自《本草纲目》，五行属木，象征挺拔正直',
-                '桐': '出自《诗经》"凤凰鸣矣，于彼高冈。梧桐生矣，于彼朝阳"，五行属木，寓意高洁',
-                '芸': '出自《诗经》"芸兮荪兮"，五行属木，比喻德行美好',
-                '萱': '源自《诗经》"萱草忘忧"，五行属木，象征怡然自得',
-                
-                // 水属性字解释
-                '泽': '出自《周易》"地泽临"，五行属水，象征包容博大',
-                '润': '取自《论语》"润物细无声"，五行属水，寓意厚德载物',
-                '滢': '出自《楚辞》"滢滢江水"，五行属水，象征清澈纯净',
-                '澜': '源自"波澜壮阔"，五行属水，寓意胸襟开阔',
-                
-                // 火属性字解释
-                '炳': '出自《易经》"日月炳明"，五行属火，象征光明磊落',
-                '煜': '取自"煜煜其光"，五行属火，寓意光明灿烂',
-                '炫': '源自"炫丽多彩"，五行属火，象征才华横溢',
-                '焱': '出自"火焱燎原"，五行属火，寓意气势磅礴',
-                
-                // 土属性字解释
-                '厚': '出自《周易》"地势坤，君子以厚德载物"，五行属土，象征深厚稳重',
-                '垣': '取自"高垣深沟"，五行属土，寓意根基稳固',
-                '茵': '源自《诗经》"绿茵青青"，五行属土，象征温润如玉',
-                '岚': '出自"晓岚暮霭"，五行属土，寓意灵秀之气',
-
-                // 传统美德字解释
-                '德': '《易经》云"德者本也"，五行属土，表示品德高尚，道德修养深厚',
-                '仁': '出自《论语》"仁者爱人"，象征仁爱之心，五行属水',
-                '义': '《论语》言"见义不为，无勇也"，表示正义勇敢，五行属金',
-                '智': '出自"智圆行方"，象征智慧圆融，五行属火',
-                
-                // 文化典故字解释
-                '文': '出自《论语》"文质彬彬"，五行属水，代表文采与内涵兼具',
-                '博': '取自"博学多才"，五行属火，象征学识渊博',
-                '诗': '源自《诗经》，五行属火，象征文学艺术才能',
-                '雅': '出自《诗经》"雅颂"，五行属木，形容高雅脱俗'
-            },
-            elementAttributes: {
-                '金': '金属性特征：刚健、果断、坚韧、正直',
-                '木': '木属性特征：生长、向上、柔韧、文雅',
-                '水': '水属性特征：智慧、灵动、包容、通达',
-                '火': '火属性特征：光明、热情、进取、活力',
-                '土': '土属性特征：稳重、厚德、包容、中正'
             }
         },
         modern: {
-            surnames: ['周 (Zhōu)', '吴 (Wú)', '徐 (Xú)', '孙 (Sūn)', '马 (Mǎ)'],
+            surnames: [
+                '周 (Zhou)', '吴 (Wu)', '徐 (Xu)', '孙 (Sun)', '马 (Ma)',
+                '梁 (Liang)', '谢 (Xie)', '宋 (Song)', '唐 (Tang)', '许 (Xu)',
+                '韩 (Han)', '邓 (Deng)', '萧 (Xiao)', '冯 (Feng)', '曹 (Cao)'
+            ],
             characters: {
-                male: ['昊 (hào)', '阳 (yáng)', '子 (zǐ)', '轩 (xuān)', '睿 (ruì)'],
-                female: ['悦 (yuè)', '欣 (xīn)', '美 (měi)', '璐 (lù)', '萱 (xuān)']
-            },
-            meanings: {
-                '昊': 'vast and bright like the sky',
-                '阳': 'sunshine and positivity',
-                '悦': 'joy and happiness',
-                '欣': 'happiness and prosperity'
-                // Add more meanings
+                male: [
+                    '昊 (Hao) - Vast Sky', '阳 (Yang) - Sun', '杰 (Jie) - Outstanding',
+                    '凯 (Kai) - Victory', '睿 (Rui) - Wise', '轩 (Xuan) - High',
+                    '瑞 (Rui) - Lucky', '浩 (Hao) - Vast', '宇 (Yu) - Universe',
+                    '航 (Hang) - Navigate', '驰 (Chi) - Gallop', '腾 (Teng) - Soar',
+                    '远 (Yuan) - Far', '鸿 (Hong) - Wild Swan', '翔 (Xiang) - Soar'
+                ],
+                female: [
+                    '悦 (Yue) - Joy', '欣 (Xin) - Happy', '璐 (Lu) - Jade',
+                    '萱 (Xuan) - Daylily', '妍 (Yan) - Beautiful', '婧 (Jing) - Pure',
+                    '琪 (Qi) - Fine Jade', '瑶 (Yao) - Precious Jade', '璇 (Xuan) - Jade',
+                    '雯 (Wen) - Warm', '婷 (Ting) - Graceful', '茜 (Qian) - Red',
+                    '媛 (Yuan) - Beauty', '珺 (Jun) - Jade', '莹 (Ying) - Crystal'
+                ]
             }
         },
         artistic: {
-            surnames: ['白 (Bái)', '云 (Yún)', '江 (Jiāng)', '柳 (Liǔ)', '梅 (Méi)'],
+            surnames: [
+                '白 (Bai)', '云 (Yun)', '江 (Jiang)', '柳 (Liu)', '梅 (Mei)',
+                '楚 (Chu)', '容 (Rong)', '风 (Feng)', '花 (Hua)', '霜 (Shuang)',
+                '雨 (Yu)', '青 (Qing)', '墨 (Mo)', '池 (Chi)', '翰 (Han)'
+            ],
             characters: {
-                male: ['风 (fēng)', '云 (yún)', '山 (shān)', '水 (shuǐ)', '月 (yuè)'],
-                female: ['诗 (shī)', '画 (huà)', '琴 (qín)', '荷 (hé)', '莲 (lián)']
-            },
-            meanings: {
-                '风': 'wind - representing freedom',
-                '云': 'cloud - symbolizing high aspirations',
-                '诗': 'poetry - artistic expression',
-                '画': 'painting - artistic talent'
-                // Add more meanings
+                male: [
+                    '山 (Shan) - Mountain', '川 (Chuan) - River', '泽 (Ze) - Lake',
+                    '河 (He) - River', '溪 (Xi) - Stream', '峰 (Feng) - Peak',
+                    '岚 (Lan) - Mist', '涛 (Tao) - Wave', '澜 (Lan) - Wave',
+                    '渊 (Yuan) - Deep Pool', '墨 (Mo) - Ink', '笔 (Bi) - Brush',
+                    '书 (Shu) - Book', '琴 (Qin) - Zither', '棋 (Qi) - Chess'
+                ],
+                female: [
+                    '芙 (Fu) - Lotus', '蓉 (Rong) - Hibiscus', '莲 (Lian) - Lotus',
+                    '菡 (Han) - Water Lily', '萍 (Ping) - Duckweed', '芷 (Zhi) - Iris',
+                    '若 (Ruo) - Delicate', '蕊 (Rui) - Flower Heart', '荷 (He) - Lotus',
+                    '苑 (Yuan) - Garden', '诗 (Shi) - Poetry', '画 (Hua) - Painting',
+                    '琴 (Qin) - Music', '韵 (Yun) - Rhythm', '吟 (Yin) - Chant'
+                ]
             }
         }
     };
 
     function generateChineseNames(originalName, style, gender) {
         const selectedStyle = nameData[style];
-        const names = new Set(); // 使用 Set 避免重复
-        const usedCombinations = new Set(); // 记录已使用的组合
+        const names = new Set();
+        const usedCombinations = new Set();
 
-        // 继续生成直到得到5个不重复的名字
         while (names.size < 5) {
             const surname = selectedStyle.surnames[Math.floor(Math.random() * selectedStyle.surnames.length)];
             const chars = selectedStyle.characters[gender];
             
-            // 随机选择两个不同的字
             const charIndex1 = Math.floor(Math.random() * chars.length);
             let charIndex2 = Math.floor(Math.random() * chars.length);
             while (charIndex2 === charIndex1) {
@@ -155,41 +154,38 @@ document.addEventListener('DOMContentLoaded', () => {
             const char1 = chars[charIndex1];
             const char2 = chars[charIndex2];
             
-            // 提取中文字和拼音
-            const surnameChinese = surname.split(' ')[0];
-            const char1Chinese = char1.split(' ')[0];
-            const char2Chinese = char2.split(' ')[0];
+            // Extract Chinese characters and meanings
+            const surnameParts = surname.split(' ');
+            const char1Parts = char1.split(' - ');
+            const char2Parts = char2.split(' - ');
             
-            // 检查组合是否重复
+            const surnameChinese = surnameParts[0];
+            const char1Chinese = char1Parts[0].split(' ')[0];
+            const char2Chinese = char2Parts[0].split(' ')[0];
+            
             const combination = `${surnameChinese}${char1Chinese}${char2Chinese}`;
             if (usedCombinations.has(combination)) {
                 continue;
             }
             
-            // 获取名字含义
-            const meaning1 = selectedStyle.meanings[char1Chinese] || '寓意美好';
-            const meaning2 = selectedStyle.meanings[char2Chinese] || '寓意美好';
-            
-            const getElementalAnalysis = (char1Chinese, char2Chinese) => {
-                const elements = ['金', '木', '水', '火', '土'];
-                const char1Element = elements[Math.floor(Math.random() * elements.length)];
-                const char2Element = elements[Math.floor(Math.random() * elements.length)];
-                
-                return `五行分析：${char1Chinese}属${char1Element}，${char2Chinese}属${char2Element}。
-                        ${selectedStyle.elementAttributes[char1Element]}
-                        ${selectedStyle.elementAttributes[char2Element]}
-                        两字相${char1Element === char2Element ? '同' : '配'}，
-                        ${char1Element === char2Element ? 
-                            '寓意坚定专一' : 
-                            '寓意阴阳调和'}。`;
-            };
-
             const nameObj = {
                 fullName: combination,
-                meaning: `${meaning1}，${meaning2}。
-                         ${getElementalAnalysis(char1Chinese, char2Chinese)}
-                         这个名字体现了中国传统文化中"${gender === 'male' ? '君子' : '淑女'}"的理想品格。`,
-                pronunciation: `${surname.split(' ')[1]} ${char1.split(' ')[1]}${char2.split(' ')[1]}`
+                surname: {
+                    chinese: surnameParts[0],
+                    pinyin: surnameParts[1].replace(/[()]/g, '')
+                },
+                firstName: {
+                    char1: {
+                        chinese: char1Parts[0].split(' ')[0],
+                        pinyin: char1Parts[0].split(' ')[1].replace(/[()]/g, ''),
+                        meaning: char1Parts[1]
+                    },
+                    char2: {
+                        chinese: char2Parts[0].split(' ')[0],
+                        pinyin: char2Parts[0].split(' ')[1].replace(/[()]/g, ''),
+                        meaning: char2Parts[1]
+                    }
+                }
             };
             
             names.add(nameObj);
@@ -200,22 +196,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayResults(names) {
+        // Clear previous results
         resultsContainer.innerHTML = '';
+        
+
+        // Add name cards
         names.forEach(name => {
             const card = document.createElement('div');
             card.className = 'name-card';
-            
-            // 将名字分为姓和名两部分显示
-            const surname = name.fullName.charAt(0);
-            const givenName = name.fullName.slice(1);
-            
             card.innerHTML = `
-                <h3>${surname}${givenName}</h3>
-                <div class="name-pronunciation">Pronunciation: ${name.pronunciation}</div>
-                <div class="name-meaning">Meaning: ${name.meaning}</div>
+                <h3>${name.fullName}</h3>
+                <div class="name-pronunciation">
+                    Pronunciation: ${name.surname.pinyin} ${name.firstName.char1.pinyin} ${name.firstName.char2.pinyin}
+                </div>
+                <div class="name-meaning">
+                    <p>Your Chinese name consists of:</p>
+                    <p>• Family name: ${name.surname.pinyin} - a common Chinese surname</p>
+                    <p>• Given name: ${name.firstName.char1.pinyin} ${name.firstName.char2.pinyin}</p>
+                    <p class="meaning-details">
+                        First character: ${name.firstName.char1.meaning}<br>
+                        Second character: ${name.firstName.char2.meaning}
+                    </p>
+                </div>
             `;
             resultsContainer.appendChild(card);
         });
+
+        // Add signature
+        const signature = document.createElement('div');
+        signature.style.textAlign = 'right';
+        signature.style.marginTop = '30px';
+        signature.style.paddingTop = '20px';
+        signature.style.borderTop = '1px solid #eee';
+        signature.style.color = '#666';
+        signature.innerHTML = '<p>Created by Gary</p><p>WeChat: caogan0710</p>';
+        resultsContainer.appendChild(signature);
     }
 
     generateBtn.addEventListener('click', () => {

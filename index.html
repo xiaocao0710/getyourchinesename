@@ -1,86 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Your Chinese Name | Name Generator</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free Chinese Name Generator for TIKTOK REFUGEE - Transform your English name into a meaningful Chinese name with traditional characters and cultural significance. The best Chinese name converter for RED and TIKTOK community members looking to embrace Chinese culture. Get your authentic Chinese name with detailed meaning and pronunciation.">
+    <meta name="keywords" content="Chinese Name Generator, Chinese Name, Chinese Name Meaning, Chinese Characters, Traditional Chinese Names, Modern Chinese Names, Chinese Culture, Chinese Name Translation, English to Chinese Name, Chinese Name Converter, Mandarin Names, TIKTOK, TIKTOK REFUGEE, RED NOTE, RED, Name Translation">
+    <meta name="author" content="Gary">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Chinese Name Generator | Get Your Authentic Chinese Name | TIKTOK REFUGEE Special Tool">
+    <meta property="og:description" content="Transform your name into an authentic Chinese name with deep cultural meaning - Professional Chinese name generator for RED and TIKTOK community. Discover your perfect Chinese name with pronunciation and character meanings.">
+    <meta property="og:type" content="website">
+    
+    <title>Chinese Name Generator | Traditional & Modern Chinese Names | TIKTOK REFUGEE Special Tool | RED Community</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Vercel Speed Insights -->
+    <script type="module" src="insights.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Get Your Chinese Name</h1>
-            <p class="subtitle">Discover your unique Chinese identity</p>
+            <h1>Chinese Name Generator</h1>
+            <p class="subtitle">Special Tool for TIKTOK REFUGEE & RED Community</p>
+            <p class="description">Transform your name into an authentic Chinese name with deep cultural meaning</p>
         </header>
 
         <main>
-            <div class="input-section">
-                <input type="text" 
-                       id="originalName" 
-                       placeholder="Enter your name"
-                       autocomplete="off">
-                
+            <section class="input-section">
+                <div class="name-input">
+                    <label for="originalName">Enter your name to get Chinese translation:</label>
+                    <input type="text" id="originalName" placeholder="Type your English name here">
+                </div>
+
                 <div class="gender-selection">
-                    <h3>Choose your gender:</h3>
-                    <div class="gender-options">
-                        <label class="gender-card">
+                    <h3>Choose your gender for appropriate Chinese characters:</h3>
+                    <div class="style-options">
+                        <label class="style-card">
                             <input type="radio" name="gender" value="male" checked>
-                            <div class="gender-content">
+                            <div class="style-content">
                                 <h4>Male</h4>
-                                <p>男 (nán)</p>
                             </div>
                         </label>
-                        <label class="gender-card">
+                        <label class="style-card">
                             <input type="radio" name="gender" value="female">
-                            <div class="gender-content">
+                            <div class="style-content">
                                 <h4>Female</h4>
-                                <p>女 (nǚ)</p>
                             </div>
                         </label>
                     </div>
                 </div>
 
                 <div class="style-selection">
-                    <h3>Choose your name style:</h3>
+                    <h3>Choose your Chinese name style:</h3>
                     <div class="style-options">
                         <label class="style-card">
                             <input type="radio" name="nameStyle" value="traditional" checked>
                             <div class="style-content">
-                                <h4>Traditional</h4>
-                                <p>Classical Chinese names with deep cultural meaning</p>
+                                <h4>Traditional Chinese Names</h4>
+                                <p>Classical Chinese characters with deep cultural meaning and history</p>
                             </div>
                         </label>
                         <label class="style-card">
                             <input type="radio" name="nameStyle" value="modern">
                             <div class="style-content">
-                                <h4>Modern</h4>
-                                <p>Contemporary names popular in modern China</p>
+                                <h4>Modern Chinese Names</h4>
+                                <p>Contemporary Chinese characters popular in modern China</p>
                             </div>
                         </label>
                         <label class="style-card">
                             <input type="radio" name="nameStyle" value="artistic">
                             <div class="style-content">
-                                <h4>Artistic</h4>
-                                <p>Poetic names inspired by nature and arts</p>
+                                <h4>Artistic Chinese Names</h4>
+                                <p>Beautiful Chinese characters inspired by nature and traditional arts</p>
                             </div>
                         </label>
                     </div>
                 </div>
 
-                <button id="generateBtn">Generate Names</button>
-            </div>
+                <button id="generateBtn" class="generate-button">Generate Your Chinese Name</button>
+            </section>
 
-            <div class="results-section">
-                <div class="results-container">
-                    <!-- Results will be generated here -->
-                </div>
-            </div>
+            <section class="results-container" aria-live="polite">
+                <!-- Chinese name results will be displayed here -->
+            </section>
         </main>
 
         <footer>
-            <p>Made with ❤️ | Explore Chinese Culture</p>
+            <p>Discover your authentic Chinese identity through our professional Chinese name generator - A bridge between TIKTOK and RED communities</p>
+            <p>Get meaningful Chinese names with accurate pronunciation and character meanings</p>
         </footer>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html> 
